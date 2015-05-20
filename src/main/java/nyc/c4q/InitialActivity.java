@@ -34,5 +34,22 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+      final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
+
+      Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+      buttonPlus.setOnClickListener(new View.OnClickListener() {
+
+          @Override
+          public void onClick(View view) {
+              int counterInt = Integer.parseInt(tvCounter.getText().toString());
+              counterInt += 1;
+              tvCounter.setText(Integer.toString(counterInt));
+          }
+      });
   }
 }
+
+//              for(int i = 1; i <10 ; i++){
+//
+//              }
