@@ -34,5 +34,38 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+    Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+    Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
+    final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
+
+    buttonPlus.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        counter++;
+
+
+        tvCounter.setText(Integer.toString(counter));
+
+      }
+    });
+
+
+    buttonMinus.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        counter--;
+
+
+        tvCounter.setText(Integer.toString(counter));
+
+      }
+    });
+
+
+
+
+
+
   }
 }

@@ -11,27 +11,27 @@
 
     <LinearLayout
         android:id="@+id/counterLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2">
 
         <LinearLayout
             android:id="@+id/counterButtonsLayout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
 
             <Button
                 android:id="@+id/buttonPlus"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="+"
                 android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/buttonMinus"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="-"
                 android:layout_weight="1"/>
@@ -44,13 +44,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="0"
+            android:textSize="60sp"
             android:layout_weight="1" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/buttonTileActivity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:text="TileActivity"
         android:layout_weight="1"/>
@@ -58,7 +59,7 @@
 
     <Button
         android:id="@+id/buttonEmpty"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:text="Empty"
         android:layout_weight="1"/>
