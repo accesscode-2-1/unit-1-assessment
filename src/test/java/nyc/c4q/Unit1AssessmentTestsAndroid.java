@@ -77,7 +77,7 @@ public class Unit1AssessmentTestsAndroid {
 
         assertEquals("LinearLayout(@+id/counterLayout) should have layout_weight='2'", 2, ((LinearLayout.LayoutParams) counterLayout.getLayoutParams()).weight, 0.01);
         assertEquals("Button      (@+id/buttonTileActivity) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonTileActivity.getLayoutParams()).weight, 0.01);
-        assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);
+        assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 2, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);
         assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) counterButtonsLayout.getLayoutParams()).weight, 0.01);
         assertEquals("TextView    (@+id/tvCounter) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) tvCounter.getLayoutParams()).weight, 0.01);
         assertEquals("Button      (@+id/buttonPlus) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonPlus.getLayoutParams()).weight, 0.01);
