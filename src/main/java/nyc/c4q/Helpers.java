@@ -3,6 +3,8 @@ package nyc.c4q;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by ehtesh on 5/19/15.
@@ -10,6 +12,7 @@ import android.view.View;
 public class Helpers {
     public static String getResourceId(View v) {
         // http://stackoverflow.com/a/17583380/198348
+
         int id = v.getId();
         String idString = "no id";
         if (id != View.NO_ID) {
