@@ -14,13 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="2"
+        android:id="@+id/counterLayout">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:id="@+id/counterButtonsLayout">
 
             <Button
                 android:layout_width="match_parent"
@@ -53,28 +55,20 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:textSize="30sp"
+        android:text="TileActivity"
+        android:id="@+id/buttonTileActivity"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/thing1"
-            android:textSize="30sp"
-            android:text="TileActivity"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/thing2"
-            android:textSize="30sp"
-            android:text="Empty"/>
-
-    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="30sp"
+        android:text="Empty"
+        android:id="@+id/buttonEmpty"/>
 
 </LinearLayout>
