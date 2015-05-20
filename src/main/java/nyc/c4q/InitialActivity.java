@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,5 +35,33 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+      saveState();
+      loadState();
+
+      Button tileActivityButton = (Button)findViewById(R.id.buttonTileActivity);
+      tileActivityButton.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(InitialActivity.this, TileActivity.class);
+              startActivity(intent);
+          }
+      });
+
   }
+    public void buttonPlus(View v){
+        TextView tvcounter = (TextView) findViewById(R.id.tvCounter);
+        counter = Integer.parseInt(tvcounter.getText().toString());
+                counter++;
+            tvcounter.setText(String.valueOf(counter));
+
+    }
+    public void buttonMinus(View v){
+        TextView tvcounter = (TextView) findViewById(R.id.tvCounter);
+        counter = Integer.parseInt(tvcounter.getText().toString());
+        counter--;
+        tvcounter.setText(String.valueOf(counter));
+
+    }
+
 }
