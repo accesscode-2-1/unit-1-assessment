@@ -28,7 +28,6 @@
                 android:text="+"
                 android:id="@+id/buttonPlus"
                 android:layout_weight="1"
-                android:onClick="add"
                 android:textSize="100sp"
                 android:gravity="center"/>
 
@@ -38,7 +37,6 @@
                 android:text="-"
                 android:id="@+id/buttonMinus"
                 android:layout_weight="1"
-                android:onClick="subtract"
                 android:textSize="100sp"
                 android:gravity="center"/>
 
