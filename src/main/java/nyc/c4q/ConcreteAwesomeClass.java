@@ -7,5 +7,7 @@ public class ConcreteAwesomeClass extends AbstractAwesomeClass {
     public ConcreteAwesomeClass(){
     }
     public ConcreteAwesomeClass(int startData){
+
     }
+
 }

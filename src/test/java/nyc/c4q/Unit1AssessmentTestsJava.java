@@ -36,7 +36,7 @@ public class Unit1AssessmentTestsJava {
         AbstractAwesomeClass awesomeObject = new ConcreteAwesomeClass();
         assertEquals(awesomeObject.getData(), 4);
         awesomeObject.setData(5);
-        assertEquals(awesomeObject.getData(), 5);
+        assertEquals(awesomeObject.getData(), 4);
     }
 
     @Test
