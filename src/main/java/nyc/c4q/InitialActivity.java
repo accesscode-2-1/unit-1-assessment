@@ -58,6 +58,8 @@ public class InitialActivity extends Activity {
       minus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
+              for(counter = 0; counter < 10 ; counter--)
+                  screen.setText(counter+"");
 
               Log.d(TAG, "minus.onClick(), counter="+counter);
 
