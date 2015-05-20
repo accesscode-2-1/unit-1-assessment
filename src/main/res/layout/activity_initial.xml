@@ -3,16 +3,47 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="nyc.c4q.InitialActivity"
     android:id="@+id/activity_initial">
 
-    <TextView
-        android:id="@+id/text"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/counterLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="InitialActivity"
-        />
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/counterButtonsLayout">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonPlus"
+                android:text="+"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonMinus"
+                android:text="-"/>
+            </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonTileActivity"
+            />
+        <TextView
+            android:id="@+id/tvCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"/>
+
+
+
+    </LinearLayout>
+
 </LinearLayout>
