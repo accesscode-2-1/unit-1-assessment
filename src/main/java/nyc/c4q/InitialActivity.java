@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InitialActivity extends Activity {
+
 
   public int counter = 0;
   public SharedPreferences preferences = null;
@@ -29,10 +31,48 @@ public class InitialActivity extends Activity {
     editor.commit();
   }
 
-  @Override
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+            TextView tv = (TextView)findViewById(R.id.tvCounter);
+            tv.setText(savedInstanceState.get("Counter").toString());
+
+    }
+
+    @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+
+
   }
+
+    public void myclick(View v){
+
+        TextView tv = (TextView)findViewById(R.id.tvCounter);
+
+        if(v.getId()==R.id.buttonPlus){
+            counter ++;
+            tv.setText(String.valueOf(counter));
+        }
+        if(v.getId()==R.id.buttonMinus){
+            counter =counter-1;
+            tv.setText(String.valueOf(counter));
+        }
+        if(v.getId()==R.id.buttonTileActivity){
+            Intent i = new Intent(this, TileActivity.class);
+            startActivity(i);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        TextView tv = (TextView)findViewById(R.id.tvCounter);
+        outState.putString("Counter", tv.getText().toString());
+    }
+
+
 }
