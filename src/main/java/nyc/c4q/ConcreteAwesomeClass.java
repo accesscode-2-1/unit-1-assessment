@@ -13,13 +13,13 @@ public class ConcreteAwesomeClass extends AbstractAwesomeClass {
         this.data = startData;
     }
 
-//    @Override
-//    public int getData() {
-//        return data;
-//    }
-//
-//    @Override
-//    public void setData(int someData) {
-//        this.data = someData;
-//    }
+    @Override
+    public int getData() {
+        return data;
+    }
+
+    @Override
+    public void setData(int someData) {
+        this.data = someData;
+    }
 }
