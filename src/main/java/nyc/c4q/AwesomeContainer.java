@@ -9,10 +9,10 @@ import java.util.Iterator;
  */
 public class AwesomeContainer {
     public static Collection createAwesomeContainer(){
-        return null;
+        return new ArrayList<AwesomeInterface>();
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
-        return;
+        awesomeContainer.add(new SubFunClass());
     }
 }
