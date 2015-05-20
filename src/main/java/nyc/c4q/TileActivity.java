@@ -27,8 +27,10 @@ public class TileActivity extends Activity {
         View yelloWView = findViewById(R.id.yellowView);
         View blueView = findViewById(R.id.blueView);
         redView.setBackgroundColor(Color.RED);
-        greenView.setBackgroundColor(Color.YELLOW);
+        greenView.setBackgroundColor(Color.GREEN);
         blueView.setBackgroundColor(Color.BLUE);
+        yelloWView.setBackgroundColor(Color.YELLOW);
+
 
     }
 

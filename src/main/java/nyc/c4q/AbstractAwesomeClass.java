@@ -5,11 +5,8 @@ package nyc.c4q;
  */
 public abstract class AbstractAwesomeClass implements AwesomeInterface {
 
-    AbstractAwesomeClass awesomeObject = new ConcreteAwesomeClass();
-    awesomeObject.setData(5);
 
-
-
+    AbstractAwesomeClass aweSomeObject = new ConcreteAwesomeClass(5);
 
 
     @Override
@@ -19,6 +16,6 @@ public abstract class AbstractAwesomeClass implements AwesomeInterface {
 
     @Override
     public  void setData(int someData) {
-    someData = 5;
+        someData = 5;
     }
 }
