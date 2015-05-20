@@ -39,6 +39,8 @@ public class Unit1AssessmentTestsJava {
         assertEquals(awesomeObject.getData(), 4);
     }
 
+
+    //TEST 04 WAS THE MOST CONFUSING THING!!! Because of this I can't complete the other tasks...ARGH!!!!
     @Test
     public void test04AwesomeContainerContainsAwesomeObject() throws Exception{
         Collection myList = AwesomeContainer.createAwesomeContainer();
