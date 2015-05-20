@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,10 +15,11 @@ public class InitialActivity extends Activity {
   public int counter = 0;
   public SharedPreferences preferences = null;
   public final static String TAG = "C4QTAG";
+  public TextView tvCounter;
 
   public void loadState(){
     Log.d(TAG, "loadState()");
-    counter = preferences.getInt("counter", 0);
+    counter = preferences.getInt("counter", counter);
     Log.d(TAG, "loadState(): counter=="+counter);
   }
 
@@ -34,5 +36,80 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+    loadState();
+
+      tvCounter = (TextView) findViewById(R.id.tvCounter);
+      if (savedInstanceState == null) {
+
+      } else {
+          tvCounter.setText(savedInstanceState.getString("tvCounter"));
+          counter = Integer.valueOf(savedInstanceState.getString("tvCounter"));
+      }
+
+
+      final Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+      final Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
+      final Button buttonTileActivity = (Button) findViewById(R.id.buttonTileActivity);
+      final Button buttonEmpty = (Button) findViewById(R.id.buttonEmpty);
+
+      buttonPlus.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              counter = Integer.parseInt(tvCounter.getText().toString()) + 1;
+              tvCounter.setText(String.valueOf(counter));
+          }
+      });
+      buttonMinus.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              counter = Integer.parseInt(tvCounter.getText().toString()) - 1;
+              tvCounter.setText(String.valueOf(counter));
+          }
+      });
+      buttonTileActivity.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(getApplicationContext(), TileActivity.class);
+              startActivity(intent);
+          }
+      });
+
+
   }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("tvCounter", tvCounter.getText().toString());
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        loadState();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadState();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        saveState();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        saveState();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        saveState();
+    }
 }
