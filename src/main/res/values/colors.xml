@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="redViewBackground">#ffff0000</color>
+
+    <color name="greenViewBackground">#ff00ff00</color>
+    <color name="yellowViewBackground">#ffffff00</color>
+
+    <color name="whiteViewBackground">#ffffffff</color>
+    <color name="blueViewBackground">#ff0000ff</color>
+</resources>
