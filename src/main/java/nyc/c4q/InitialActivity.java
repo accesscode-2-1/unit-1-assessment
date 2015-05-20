@@ -14,6 +14,7 @@ public class InitialActivity extends Activity {
   public int counter = 0;
   public SharedPreferences preferences = null;
   public final static String TAG = "C4QTAG";
+  TextView tvCounter;
 
   public void loadState(){
     Log.d(TAG, "loadState()");
@@ -34,5 +35,37 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+    tvCounter = (TextView) findViewById(R.id.tvCounter);
+
+    if(savedInstanceState != null){
+        tvCounter.setText(savedInstanceState.getString("tvCount"));
+    }
+
+    Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+    buttonPlus.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int count = Integer.parseInt(tvCounter.getText().toString());
+            count++;
+            tvCounter.setText(Integer.toString(count));
+        }
+    });
+
+    Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
+    buttonMinus.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int count = Integer.parseInt(tvCounter.getText().toString());
+            count--;
+            tvCounter.setText(Integer.toString(count));
+        }
+    });
   }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("tvCount", tvCounter.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
 }
