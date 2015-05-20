@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,8 +32,46 @@ public class InitialActivity extends Activity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+      Log.d(TAG, "onCreate()");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+      Button plus = (Button) findViewById(R.id.buttonPlus);
+      Button minus = (Button) findViewById(R.id.buttonMinus);
+      Button tile = (Button) findViewById(R.id.buttonTileActivity);
+      final TextView screen = (TextView) findViewById(R.id.tvCounter);
+
+
+
+
+
+      plus.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              for(counter = 0; counter < 10 ; counter++)
+                  screen.setText(counter+"");
+
+
+              Log.d(TAG, "plus.onClick(), counter="+counter);
+          }
+      });
+      minus.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+
+              Log.d(TAG, "minus.onClick(), counter="+counter);
+
+          }
+      });
+      tile.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+
+              Log.d(TAG, "tile.onClick()");
+              Intent mainIntent = new Intent(InitialActivity.this,
+                      TileActivity.class);
+              startActivity(mainIntent);
+          }
+      });
   }
 }
