@@ -10,12 +10,12 @@ public class ConcreteAwesomeClass extends AbstractAwesomeClass {
 
     @Override
     public int getData() {
-        return 5;
+        return 4;
     }
 
     @Override
     public void setData(int someData) {
-        super.setData(someData);
+        super.setData(5);
     }
 
     public ConcreteAwesomeClass(){

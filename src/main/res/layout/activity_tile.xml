@@ -19,7 +19,7 @@
             android:id="@+id/redView"
             android:layout_width="fill_parent"
             android:layout_height="201dp"
-            android:background="@android:color/holo_red_dark"
+
             android:baselineAligned="true"></LinearLayout>
 
         <LinearLayout

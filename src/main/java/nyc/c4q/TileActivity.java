@@ -1,16 +1,35 @@
 package nyc.c4q;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class TileActivity extends Activity {
+
+//    public Color ColorDrawable(int colorRed){
+//
+//    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tile);
+
+        View redView = findViewById(R.id.redView);
+        View greenView = findViewById(R.id.greenView);
+        View yelloWView = findViewById(R.id.yellowView);
+        View blueView = findViewById(R.id.blueView);
+        redView.setBackgroundColor(Color.RED);
+        greenView.setBackgroundColor(Color.YELLOW);
+        blueView.setBackgroundColor(Color.BLUE);
+
     }
 
     @Override
