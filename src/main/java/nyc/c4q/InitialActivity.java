@@ -38,5 +38,8 @@ public class InitialActivity extends Activity {
 
       Button buttonPlus = ((Button)this.findViewById(R.id.buttonPlus));
       buttonPlus.setOnClickListener(new MyOnClickListner(tvCounter));
+
+      Button buttonMinus = ((Button)this.findViewById(R.id.buttonMinus));
+      buttonMinus.setOnClickListener(new MyOnClickListnerMinus(tvCounter));
   }
 }
