@@ -18,14 +18,16 @@
             android:orientation="vertical"
             android:id="@+id/redView"
             android:layout_width="fill_parent"
-            android:layout_height="201dp"
-
-            android:baselineAligned="true"></LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:baselineAligned="true"
+            android:background="@android:color/holo_red_dark"></LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
+            android:layout_weight="60"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="0dp"
             android:background="@android:color/holo_green_light"
             android:baselineAligned="false"
             android:id="@+id/greenView"></LinearLayout>
@@ -42,21 +44,24 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:id="@+id/yellowView"
+            android:layout_weight='33'
             android:background="#fffffd23"
-            android:layout_height="182dp"></LinearLayout>
+            android:layout_height="0dp"></LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:id="@+id/whiteView"
+            android:layout_weight="44"
             android:layout_width="fill_parent"
-            android:layout_height="160dp"
+            android:layout_height="0dp"
             android:background="@android:color/white"></LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="0dp"
             android:background="#ff0708ff"
+            android:layout_weight="22"
             android:id="@+id/blueView"></LinearLayout>
     </LinearLayout>
 
