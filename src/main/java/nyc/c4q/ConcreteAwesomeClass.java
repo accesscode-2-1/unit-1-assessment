@@ -5,7 +5,19 @@ package nyc.c4q;
  */
 public class ConcreteAwesomeClass extends AbstractAwesomeClass {
     public ConcreteAwesomeClass(){
+
     }
     public ConcreteAwesomeClass(int startData){
+        startData = 4;
+    }
+
+    @Override
+    public int getData() {
+        return super.getData();
+    }
+
+    @Override
+    public void setData(int someData) {
+        super.setData(someData);
     }
 }

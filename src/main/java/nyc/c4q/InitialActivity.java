@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -34,5 +33,10 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+      TextView tvCounter = (TextView)findViewById(R.id.tvCounter);
+
+      Button buttonPlus = ((Button)this.findViewById(R.id.buttonPlus));
+      buttonPlus.setOnClickListener(new MyOnClickListner(tvCounter));
   }
 }
