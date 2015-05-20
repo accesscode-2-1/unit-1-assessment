@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,21 +36,46 @@ public class InitialActivity extends Activity {
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
 
+      loadState();
+
       final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
 
       Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
       buttonPlus.setOnClickListener(new View.OnClickListener() {
-
           @Override
           public void onClick(View view) {
-              int counterInt = Integer.parseInt(tvCounter.getText().toString());
-              counterInt += 1;
-              tvCounter.setText(Integer.toString(counterInt));
+//              int counterInt = Integer.parseInt(tvCounter.getText().toString());
+//              counterInt += 1;
+//              tvCounter.setText(Integer.toString(counterInt));
+
+              counter += 1;
+              tvCounter.setText(Integer.toString(counter));
+              saveState();
           }
       });
+
+      Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
+      buttonMinus.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+//              int counterInt = Integer.parseInt(tvCounter.getText().toString());
+//              counterInt -= 1;
+//              tvCounter.setText(Integer.toString(counterInt));
+
+              counter -= 1;
+              tvCounter.setText(Integer.toString(counter));
+              saveState();
+          }
+      });
+
+      Button buttonTileActivity = (Button) findViewById(R.id.buttonTileActivity);
+      buttonTileActivity.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent activityTile = new Intent(InitialActivity.this, TileActivity.class);
+              startActivity(activityTile);
+          }
+      });
+
   }
 }
-
-//              for(int i = 1; i <10 ; i++){
-//
-//              }
