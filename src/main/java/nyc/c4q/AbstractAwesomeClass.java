@@ -5,13 +5,20 @@ package nyc.c4q;
  */
 public abstract class AbstractAwesomeClass implements AwesomeInterface {
 
+
+
+
+
+
+
+
     @Override
     public int getData() {
-        return 0;
+        return 5;
     }
 
     @Override
     public void setData(int someData) {
-
+    someData = 5;
     }
 }

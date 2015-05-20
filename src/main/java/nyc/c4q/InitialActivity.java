@@ -10,9 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class InitialActivity extends Activity {
     private int textCount;
     private TextView tvCount;
+    private Button buttonPlus;
+    private Button buttonMinus;
 
   public int counter = 0;
   public SharedPreferences preferences = null;
@@ -39,10 +42,16 @@ public class InitialActivity extends Activity {
     preferences = getPreferences(Context.MODE_PRIVATE);
 
 
-      Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
-      Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
+      buttonPlus = (Button) findViewById(R.id.buttonPlus);
+      buttonMinus = (Button) findViewById(R.id.buttonMinus);
       tvCount = (TextView) findViewById(R.id.tvCounter);
-      textCount = Integer.parseInt((String) tvCount.getText());
+      textCount = Integer.parseInt(   (String) tvCount.getText()   );
+
+      View redView = findViewById(R.id.redView);
+      //redView.setBackground(-65536);
+
+
+
 
       Button tileActivityBtn = (Button) findViewById(R.id.buttonTileActivity);
       tileActivityBtn.setOnClickListener(new View.OnClickListener() {
@@ -55,22 +64,27 @@ public class InitialActivity extends Activity {
               //
 
 
-
-
-
       buttonPlus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-                textCount++;
-                tvCount.setText(textCount);
+
+                  textCount++;
+                  String x = String.valueOf(textCount);
+                  tvCount.setText(x);
+
+
           }
       });
 
       buttonMinus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
+
               textCount--;
-              tvCount.setText(textCount);
+              String x = String.valueOf(textCount);
+
+              tvCount.setText(x);
+
 
 
           }
