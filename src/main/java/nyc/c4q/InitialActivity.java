@@ -37,9 +37,9 @@ public class InitialActivity extends Activity {
 
       Log.d(TAG, "onCreate(), counter="+counter);
 
-//    if (savedInstanceState != null) {
-//        counter = savedInstanceState.get(TOTAL_COUNT);
-//    }
+    if (savedInstanceState != null) {
+        counter = (Integer)savedInstanceState.get(TOTAL_COUNT);
+    }
 
 
 
