@@ -21,7 +21,7 @@ public class MyOnClickListner implements View.OnClickListener{
     @Override
     public void onClick (View view){
         count++;
-        totalCount++;
+
         textView.setText(""+count);
 
     }
