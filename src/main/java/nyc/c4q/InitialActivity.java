@@ -19,7 +19,7 @@ public class InitialActivity extends Activity {
 
   public void loadState(){
     Log.d(TAG, "loadState()");
-    counter = preferences.getInt("counter", counter);
+    counter = preferences.getInt("counter", 0);
     Log.d(TAG, "loadState(): counter=="+counter);
   }
 
@@ -36,16 +36,12 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
-    loadState();
 
       tvCounter = (TextView) findViewById(R.id.tvCounter);
-      if (savedInstanceState == null) {
-
-      } else {
-          tvCounter.setText(savedInstanceState.getString("tvCounter"));
-          counter = Integer.valueOf(savedInstanceState.getString("tvCounter"));
+      if (savedInstanceState != null) {
+          loadState();
+          tvCounter.setText(counter);
       }
-
 
       final Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
       final Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
@@ -81,6 +77,13 @@ public class InitialActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("tvCounter", tvCounter.getText().toString());
+        outState.putInt("count", counter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loadState();
     }
 
     @Override
