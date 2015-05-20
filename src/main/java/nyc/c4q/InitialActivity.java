@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InitialActivity extends Activity {
+    int numtest = 0;
 
   public int counter = 0;
   public SharedPreferences preferences = null;
@@ -35,4 +37,20 @@ public class InitialActivity extends Activity {
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
   }
+    public void addone(View v){
+
+        numtest+=1;
+        TextView t = (TextView) findViewById(R.id.counter);
+        t.setText(numtest+"");
+    }
+    public void subone(View v){
+
+        numtest-=1;
+        TextView t = (TextView) findViewById(R.id.counter);
+        t.setText(numtest+"");
+    }
+    public void toTile(View v) {
+        Intent intent = new Intent(InitialActivity.this, TileActivity.class);
+        startActivity(intent);
+    }
 }

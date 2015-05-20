@@ -1,18 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="nyc.c4q.InitialActivity"
     android:id="@+id/activity_initial">
 
-    <TextView
-        android:id="@+id/text"
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="InitialActivity"
+        android:layout_weight=".5">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+"
+                android:textSize="30dp"
+                android:layout_weight="1"
+                android:onClick="addone"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textSize="30dp"
+                android:layout_weight="1"
+                android:onClick="subone"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:textSize="30dp"
+                android:paddingTop="10dp"
+                android:onClick="addone"
+                android:layout_gravity="right"
+                android:layout_weight="2"
+                android:id="@+id/counter"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="TileActivity"
+        android:textSize="30dp"
+        android:onClick="toTile"
+        android:layout_weight="1"
+        android:id="@+id/tile"
         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Empty"
+        android:textSize="30dp"
+        android:layout_weight="1"
+        />
+
+
 </LinearLayout>
+
+
+
+
+
+
+
