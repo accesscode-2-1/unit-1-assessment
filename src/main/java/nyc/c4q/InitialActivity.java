@@ -28,6 +28,9 @@ public class InitialActivity extends Activity {
     editor.putInt("counter", counter);
     editor.commit();
   }
+    // use InitialActivity.saveState() and InitialActivity.loadState() methods
+
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
