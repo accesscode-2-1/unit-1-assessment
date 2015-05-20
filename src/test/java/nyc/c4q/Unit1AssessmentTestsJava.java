@@ -35,8 +35,8 @@ public class Unit1AssessmentTestsJava {
     public void test03AbstractAwesomeClassImplementsAwesomeInterface() throws Exception{
         AbstractAwesomeClass awesomeObject = new ConcreteAwesomeClass();
         assertEquals(awesomeObject.getData(), 4);
-        awesomeObject.setData(4);
-        assertEquals(awesomeObject.getData(), 4);
+        awesomeObject.setData(5);
+        assertEquals(awesomeObject.getData(), 5);
     }
 
     @Test
