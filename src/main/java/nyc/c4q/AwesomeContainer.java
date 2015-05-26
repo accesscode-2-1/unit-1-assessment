@@ -13,6 +13,6 @@ public class AwesomeContainer {
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
-        awesomeContainer.add(new SubFunClass());
+        awesomeContainer.add(new ConcreteAwesomeClass());
     }
 }
