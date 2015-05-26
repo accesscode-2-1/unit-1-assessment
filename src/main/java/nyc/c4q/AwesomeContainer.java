@@ -15,7 +15,7 @@ public class AwesomeContainer {
 
         col = new ArrayList();
 
-        return col;
+        return null;
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
