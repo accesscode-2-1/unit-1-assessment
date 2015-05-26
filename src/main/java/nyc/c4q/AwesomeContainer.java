@@ -8,15 +8,15 @@ import java.util.List;
  * Created by amyquispe on 5/19/15.
  */
 public class AwesomeContainer {
-    static List c;
+    static ArrayList c;
 
     public static Collection createAwesomeContainer(){
         c = new ArrayList();
-        return c;
+        return (List) c;
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
-        awesomeContainer.add(new SubFunClass());
+        awesomeContainer.add(new ConcreteAwesomeClass());
     }
 
 }
