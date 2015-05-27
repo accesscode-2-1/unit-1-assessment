@@ -8,4 +8,15 @@ public class ConcreteAwesomeClass extends AbstractAwesomeClass {
     }
     public ConcreteAwesomeClass(int startData){
     }
+    @Override
+    public int getData() {
+        return 0;
+    }
+
+    @Override
+    public void setData(int someData) {
+
+    }
+    //AbstractAwesomeClass awesomeObject = new ConcreteAwesomeClass();
+
 }
