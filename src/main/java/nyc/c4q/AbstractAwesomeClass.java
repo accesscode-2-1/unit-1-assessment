@@ -10,8 +10,13 @@ public abstract class AbstractAwesomeClass implements AwesomeInterface {
         return 4;
     }
 
+    public AbstractAwesomeClass() {
+        super();
+    }
+
     @Override
     public void setData(int someData) {
+
 
 
     }
