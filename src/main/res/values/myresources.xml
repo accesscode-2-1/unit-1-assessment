@@ -1,0 +1,9 @@
+
+<resources>
+    <drawable name="red_color">#ff0000</drawable>
+    <drawable name="green_color">#00ff00</drawable>
+
+    <drawable name="yellow_color">#ffff00</drawable>
+    <drawable name="white_color">#ffffff</drawable>
+    <drawable name="blue_color">#0000ff</drawable>
+</resources>
