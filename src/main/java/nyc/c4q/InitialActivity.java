@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class InitialActivity extends Activity implements View.OnClickListener {
 
-  public int counter = 0;
+  public  static int counter = 0;
   public SharedPreferences preferences = null;
   public final static String TAG = "C4QTAG";
     TextView tvCounter;
@@ -51,6 +51,10 @@ public class InitialActivity extends Activity implements View.OnClickListener {
       Button buttonTileActivity = (Button) findViewById(R.id.buttonTileActivity);
       Button buttonEmpty = (Button) findViewById(R.id.buttonEmpty);
       loadState();
+
+      if (savedInstanceState != null) {
+          int mCurrentCounter = savedInstanceState.getInt(String.valueOf(counter));
+      }
       }
 
     @Override
@@ -62,8 +66,7 @@ public class InitialActivity extends Activity implements View.OnClickListener {
     protected void onResume() {
         super.onResume();
         tvCounter.getText();
-    };
-
+    }
 
 
     public void onClick (View v) {
@@ -80,6 +83,22 @@ public class InitialActivity extends Activity implements View.OnClickListener {
             tvCounter.setText(String.valueOf(counter));
 
         }
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+//        state.get(String.valueOf(counter));
+
+
+        super.onSaveInstanceState(state);
+//        int mCurrentCounter = getInt(counter);
+        state.putInt("mCurrentCounter", counter);
+        Log.d("InitialActivity", "onSaveInstanceState");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 
 }
