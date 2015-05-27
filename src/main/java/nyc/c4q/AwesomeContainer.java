@@ -8,11 +8,18 @@ import java.util.Iterator;
  * Created by amyquispe on 5/19/15.
  */
 public class AwesomeContainer {
+
+    public static ArrayList cow = new ArrayList();
+
     public static Collection createAwesomeContainer(){
-        return null;
+
+        return cow;
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
-        return;
+        ConcreteAwesomeClass boo = new ConcreteAwesomeClass();
+        cow.add(boo);
+
+
     }
 }

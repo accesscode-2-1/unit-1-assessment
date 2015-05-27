@@ -5,7 +5,11 @@ package nyc.c4q;
  */
 public class ConcreteAwesomeClass extends AbstractAwesomeClass {
     public ConcreteAwesomeClass(){
+
     }
     public ConcreteAwesomeClass(int startData){
+
     }
+
+
 }
