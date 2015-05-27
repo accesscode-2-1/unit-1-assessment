@@ -86,7 +86,7 @@ public class Unit1AssessmentTestsAndroid {
 
         assertEquals("LinearLayout(@+id/counterLayout) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) counterLayout.getLayoutParams()).height);
         assertEquals("Button      (@+id/buttonTileActivity) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) buttonTileActivity.getLayoutParams()).height);
-        assertEquals("Button      (@+i/buttonEmpty) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).height);
+        assertEquals("Button      (@+id/buttonEmpty) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).height);
         assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_width='0dp'", 0, ((LinearLayout.LayoutParams) counterButtonsLayout.getLayoutParams()).width);
         assertEquals("TextView    (@+id/tvCounter) should have layout_width='0dp'", 0, ((LinearLayout.LayoutParams) tvCounter.getLayoutParams()).width);
         assertEquals("Button      (@+id/buttonPlus) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) buttonPlus.getLayoutParams()).height);
