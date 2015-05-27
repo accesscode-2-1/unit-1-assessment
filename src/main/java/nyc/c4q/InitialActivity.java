@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InitialActivity extends Activity {
+  Button button;
   private static final String TOTAL_COUNT = "Total_Count";
   private String totalCount = "";
   public int counter = 0;
@@ -35,11 +37,14 @@ public class InitialActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-      Log.d(TAG, "onCreate(), counter="+counter);
+     // Log.d(TAG, "onCreate(), counter="+counter);
 
     if (savedInstanceState != null) {
-        counter = (Integer)savedInstanceState.get(TOTAL_COUNT);
+        this.loadState();
+
     }
+
+
 
 
 
@@ -73,15 +78,33 @@ public class InitialActivity extends Activity {
 //      buttonMinus.setOnClickListener(new MyOnClickListnerMinus(tvCounter));
 
       totalCount = ""+counter;
+
+
+      button=(Button)findViewById(R.id.buttonTileActivity);
+
+      button.setOnClickListener(new View.OnClickListener() {
+
+          @Override
+          public void onClick(View v) {
+//
+//              startActivity(new Intent("TileActivity"));
+              Intent i = new Intent(getApplicationContext(), TileActivity.class);
+              startActivity(i);
+          }
+      });
+
+
   }
 
-
-
-
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        outState.putInt(TOTAL_COUNT, counter);
+    protected void onStop() {
+        super.onStop();
+        this.saveState();
     }
+//    @Override
+//    protected void onSaveInstanceState(Bundle savedInstanceState) {
+//        super.onSaveInstanceState(savedInstanceState);
+//        saveState();
+////        savedInstanceState.putString(TOTAL_COUNT,totalCount);
+//    }
 }

@@ -5,11 +5,35 @@
     android:layout_height="match_parent"
     tools:context="nyc.c4q.TileActivity"
     android:id="@+id/activity_tile"
+    android:orientation="horizontal"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/leftSide"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rightSide"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+    </LinearLayout>
 
     <TextView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:text="TileActivity"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/buttonTileActivity"/>
 
 </LinearLayout>
