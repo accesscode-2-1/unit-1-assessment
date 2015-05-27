@@ -20,6 +20,7 @@ public class InitialActivity extends Activity {
   public void loadState(){
     Log.d(TAG, "loadState()");
     counter = preferences.getInt("counter", 0);
+    tvCounter.setText(preferences.getString("tv", tvCounter.getText().toString()));
     Log.d(TAG, "loadState(): counter=="+counter);
   }
 
@@ -28,6 +29,7 @@ public class InitialActivity extends Activity {
     Log.d(TAG, "saveState(): counter=="+counter);
     SharedPreferences.Editor editor = preferences.edit();
     editor.putInt("counter", counter);
+    editor.putString("tv", tvCounter.getText().toString());
     editor.commit();
   }
 
@@ -39,7 +41,6 @@ public class InitialActivity extends Activity {
 
       tvCounter = (TextView) findViewById(R.id.tvCounter);
       if (savedInstanceState != null) {
-          loadState();
           tvCounter.setText(counter);
       }
 
@@ -53,6 +54,7 @@ public class InitialActivity extends Activity {
           public void onClick(View view) {
               counter = Integer.parseInt(tvCounter.getText().toString()) + 1;
               tvCounter.setText(String.valueOf(counter));
+              saveState();
           }
       });
       buttonMinus.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +62,7 @@ public class InitialActivity extends Activity {
           public void onClick(View view) {
               counter = Integer.parseInt(tvCounter.getText().toString()) - 1;
               tvCounter.setText(String.valueOf(counter));
+              saveState();
           }
       });
       buttonTileActivity.setOnClickListener(new View.OnClickListener() {
@@ -67,10 +70,11 @@ public class InitialActivity extends Activity {
           public void onClick(View view) {
               Intent intent = new Intent(getApplicationContext(), TileActivity.class);
               startActivity(intent);
+              saveState();
           }
       });
 
-
+      loadState();
   }
 
     @Override
@@ -78,41 +82,5 @@ public class InitialActivity extends Activity {
         super.onSaveInstanceState(outState);
         outState.putString("tvCounter", tvCounter.getText().toString());
         outState.putInt("count", counter);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        loadState();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        loadState();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        loadState();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        saveState();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        saveState();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        saveState();
     }
 }
