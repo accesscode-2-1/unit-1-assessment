@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+
+
+    <!--InitialActivity activity = Robolectric.buildActivity(InitialActivity.class).setup().get();-->
+    <!--LinearLayout layout = (LinearLayout) activity.findViewById(R.id.activity_initial);-->
+
+    <!--assertTrue("LinearLayout(@+id/activity_initial) should have a vertical orientation", layout.getOrientation() == LinearLayout.VERTICAL);-->
+    <!--assertTrue("LinearLayout(@+id/activity_initial)[0] should be a LinearLayout", layout.getChildAt(0) instanceof LinearLayout);-->
+    <!--LinearLayout counterLayout = (LinearLayout) layout.getChildAt(0);-->
+    <!--assertTrue("LinearLayout(@+id/activity_initial)[0] should have R.id.counterLayout", Helpers.getResourceId(counterLayout).equals("counterLayout"));-->
+    <!--assertTrue("LinearLayout(@+id/activity_initial)[0] should be equal to LinearLayout(@+id/counterLayout)", counterLayout == Helpers.findViewByIdString(activity, "counterLayout"));-->
+    <!--assertTrue("LinearLayout(@+id/activity_initial)[0] should have a horizontal orientation", counterLayout.getOrientation() == LinearLayout.HORIZONTAL);-->
+
+    <!--assertTrue("LinearLayout(@+id/counterLayout)[0] should be a LinearLayout", counterLayout.getChildAt(0) instanceof LinearLayout);-->
+    <!--LinearLayout counterButtonsLayout = (LinearLayout) counterLayout.getChildAt(0);-->
+    <!--assertTrue("LinearLayout(@+id/counterLayout)[0] should have R.id.counterButtonsLayout", Helpers.getResourceId(counterButtonsLayout).equals("counterButtonsLayout"));-->
+    <!--assertTrue("LinearLayout(@+id/counterLayout)[0] should be equal to LinearLayout(@+id/counterButtonsLayout)", counterButtonsLayout == Helpers.findViewByIdString(activity, "counterButtonsLayout"));-->
+    <!--assertTrue("LinearLayout(@+id/counterLayout)[0] should have a vertical orientation", counterButtonsLayout.getOrientation() == LinearLayout.VERTICAL);-->
+
+    <!--assertTrue("LinearLayout(@+id/counterButtonsLayout)[0] should be a Button", counterButtonsLayout.getChildAt(0) instanceof Button);-->
+    <!--Button buttonPlus = (Button) counterButtonsLayout.getChildAt(0);-->
+    <!--assertTrue("LinearLayout(@+id/counterButtonsLayout)[0] should have R.id.buttonPlus", Helpers.getResourceId(buttonPlus).equals("buttonPlus"));-->
+    <!--assertTrue("LinearLayout(@+id/counterButtonsLayout)[0] should be equal to Button(@+id/buttonPlus)", buttonPlus == Helpers.findViewByIdString(activity, "buttonPlus"));-->
+    <!--assertEquals("+", buttonPlus.getText());-->
+
+    <!--assertTrue("LinearLayout(@+id/counterButtonsLayout)[1] should be a Button", counterButtonsLayout.getChildAt(1) instanceof Button);-->
+    <!--Button buttonMinus = (Button) counterButtonsLayout.getChildAt(1);-->
+    <!--assertTrue("LinearLayout(@+id/counterButtonsLayout)[1] should have R.id.buttonMinus", Helpers.getResourceId(buttonMinus).equals("buttonMinus"));-->
+    <!--assertTrue("LinearLayout(@+id/counterButtonsLayout)[1] should be equal to Button(@+id/buttonMinus)", buttonMinus == Helpers.findViewByIdString(activity, "buttonMinus"));-->
+    <!--assertEquals("-", buttonMinus.getText());-->
+
+    <!--View tvCounter = counterLayout.getChildAt(1);-->
+    <!--assertTrue("LinearLayout(@+id/counterLayout)[1] should be equal to TextView(@+id/tvCounter)",-->
+    <!--tvCounter instanceof TextView && Helpers.getResourceId(tvCounter).equals("tvCounter"));-->
+    <!--assertEquals("0", ((TextView) tvCounter).getText());-->
+
+    <!--View buttonTileActivity = layout.getChildAt(1);-->
+    <!--assertTrue("LinearLayout(@+id/activity_initial)[1] should be equal to Button(@+id/buttonTileActivity)",-->
+    <!--buttonTileActivity instanceof Button && Helpers.getResourceId(buttonTileActivity).equals("buttonTileActivity"));-->
+    <!--assertEquals("TileActivity", ((Button) buttonTileActivity).getText());-->
+
+    <!--View buttonEmpty = layout.getChildAt(2);-->
+    <!--assertTrue("LinearLayout(@+id/activity_initial)[2] should be equal to Button(@+id/buttonEmpty)",-->
+    <!--buttonEmpty instanceof Button && Helpers.getResourceId(buttonEmpty).equals("buttonEmpty"));-->
+    <!--assertEquals("Empty", ((Button) buttonEmpty).getText());-->
+
+    <!--assertEquals("LinearLayout(@+id/counterLayout) should have layout_height='0dp'", 0, counterLayout.getLayoutParams().height);-->
+    <!--assertEquals("LinearLayout(@+id/counterLayout) should have layout_width='match_parent'", LayoutParams.MATCH_PARENT, counterLayout.getLayoutParams().width);-->
+    <!--assertEquals("LinearLayout(@+id/counterLayout) should have layout_weight='2'", 2, ((LinearLayout.LayoutParams) counterLayout.getLayoutParams()).weight, 0.01);-->
+    <!--assertEquals("Button      (@+id/buttonTileActivity) should have layout_height='0dp'", 0, buttonTileActivity.getLayoutParams().height);-->
+    <!--assertEquals("Button      (@+id/buttonTileActivity) should have layout_width='match_parent'", LayoutParams.MATCH_PARENT, buttonTileActivity.getLayoutParams().width);-->
+    <!--assertEquals("Button      (@+id/buttonTileActivity) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonTileActivity.getLayoutParams()).weight, 0.01);-->
+
+    <!--assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 2, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);-->
+
+    <!--assertEquals("Button      (@+id/buttonEmpty) should have layout_height='0dp'", 0, buttonEmpty.getLayoutParams().height);-->
+    <!--assertEquals("Button      (@+id/buttonEmpty) should have layout_width='match_parent'", LayoutParams.MATCH_PARENT, buttonEmpty.getLayoutParams().width);-->
+    <!--assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);-->
+    <!--assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_height='match_parent'", LayoutParams.MATCH_PARENT, counterButtonsLayout.getLayoutParams().height);-->
+    <!--assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_width='0dp'", 0, counterButtonsLayout.getLayoutParams().width);-->
+
+    <!--assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) counterButtonsLayout.getLayoutParams()).weight, 0.01);-->
+    <!--assertEquals("TextView    (@+id/tvCounter) should have layout_height='match_parent'", LayoutParams.MATCH_PARENT, tvCounter.getLayoutParams().height);-->
+    <!--assertEquals("TextView    (@+id/tvCounter) should have layout_width='0dp'", 0, tvCounter.getLayoutParams().width);-->
+    <!--assertEquals("TextView    (@+id/tvCounter) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) tvCounter.getLayoutParams()).weight, 0.01);-->
+    <!--assertEquals("Button      (@+id/buttonPlus) should have layout_height='0dp'", 0, buttonPlus.getLayoutParams().height);-->
+    <!--assertEquals("Button      (@+id/buttonPlus) should have layout_width='match_parent'", LayoutParams.MATCH_PARENT, buttonPlus.getLayoutParams().width);-->
+    <!--assertEquals("Button      (@+id/buttonPlus) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonPlus.getLayoutParams()).weight, 0.01);-->
+    <!--assertEquals("Button      (@+id/buttonMinus) should have layout_height='0dp'", 0, buttonMinus.getLayoutParams().height);-->
+    <!--assertEquals("Button      (@+id/buttonMinus) should have layout_width='match_parent'", LayoutParams.MATCH_PARENT, buttonMinus.getLayoutParams().width);-->
+    <!--assertEquals("Button      (@+id/buttonMinus) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonMinus.getLayoutParams()).weight, 0.01);-->
+
+    <!--}-->
+
+
+
+
+
+
+
+
+
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,10 +92,73 @@
     tools:context="nyc.c4q.InitialActivity"
     android:id="@+id/activity_initial">
 
-    <TextView
-        android:id="@+id/text"
+
+
+    <LinearLayout
+        android:id="@+id/counterLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="InitialActivity"
-        />
+        android:layout_weight="2"
+        android:layout_height="0dp">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/counterButtonsLayout"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/buttonPlus"
+                android:layout_weight="1"
+                android:text="+"
+                android:onClick="onPlusClick"
+                android:textSize="42dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/buttonMinus"
+                android:onClick="onMinusClick"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="42dp" />
+
+        </LinearLayout>
+
+        <TextView
+
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/tvCounter"
+            android:text="0"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:layout_width="0dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:text="TileActivity"
+        android:id="@+id/buttonTileActivity"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textSize="42dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Empty"
+        android:textSize="42dp"
+        android:layout_weight="1"
+        android:id="@+id/buttonEmpty"/>
+_
 </LinearLayout>
