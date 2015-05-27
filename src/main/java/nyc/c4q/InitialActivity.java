@@ -36,7 +36,12 @@ public class InitialActivity extends Activity {
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
 
+      loadState();
+
+
     final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
+
+      tvCounter.setText(Integer.toString(counter));
 
 
     Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
@@ -71,5 +76,9 @@ public class InitialActivity extends Activity {
 
   }
 
-
+    @Override
+    protected void onDestroy() {
+        saveState();
+        super.onDestroy();
+    }
 }
