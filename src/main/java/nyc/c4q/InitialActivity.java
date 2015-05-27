@@ -39,10 +39,15 @@ public class InitialActivity extends Activity implements View.OnClickListener {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
 
+    SharedPreferences preferences1 = getPreferences(MODE_PRIVATE);
+
     plus = (Button)findViewById(R.id.buttonPlus);
     minus = (Button)findViewById(R.id.buttonMinus);
     empty = (Button)findViewById(R.id.buttonEmpty);
-    tvCounter = (TextView)findViewById(R.id.tvCounter);
+
+      tvCounter = (TextView)findViewById(R.id.tvCounter);
+      String counterValue = tvCounter.getText().toString();
+      tvCounter.setText(preferences1.getString("Counter", counterValue));
 
       plus.setOnClickListener(this);
       minus.setOnClickListener(this);
@@ -51,7 +56,30 @@ public class InitialActivity extends Activity implements View.OnClickListener {
     preferences = getPreferences(Context.MODE_PRIVATE);
   }
 
-  @Override
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceSate) {
+        super.onSaveInstanceState(savedInstanceSate);
+
+        TextView tvCounter = (TextView)findViewById(R.id.tvCounter);
+        String countValue = tvCounter.getText().toString();
+
+        savedInstanceSate.putString("Count", countValue);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences preference = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        TextView tvCounter = (TextView)findViewById(R.id.tvCounter);
+        String counter = tvCounter.getText().toString();
+
+        editor.putString("Counter", counter);
+    }
+
+    @Override
   public void onClick(View v){
     if (v == plus){
         counter++;
