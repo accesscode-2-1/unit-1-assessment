@@ -20,6 +20,7 @@ public class InitialActivity extends Activity {
     Log.d(TAG, "loadState()");
     counter = preferences.getInt("counter", 0);
     Log.d(TAG, "loadState(): counter=="+counter);
+
   }
 
   public void saveState(){
@@ -28,9 +29,22 @@ public class InitialActivity extends Activity {
     SharedPreferences.Editor editor = preferences.edit();
     editor.putInt("counter", counter);
     editor.commit();
+
   }
 
-  @Override
+    @Override
+    protected void onPause() {
+        super.onPause();
+        
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadState();
+    }
+
+    @Override
   protected void onCreate(Bundle savedInstanceState) {
       Log.d(TAG, "onCreate()");
     super.onCreate(savedInstanceState);
@@ -43,25 +57,25 @@ public class InitialActivity extends Activity {
 
 
 
-
-
       plus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              for(counter = 0; counter < 10 ; counter++)
-                  screen.setText(counter+"");
-
-
               Log.d(TAG, "plus.onClick(), counter="+counter);
+
+              counter+=1;
+              screen.setText(counter+"");
+
+
           }
       });
       minus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              for(counter = 0; counter < 10 ; counter--)
-                  screen.setText(counter+"");
-
               Log.d(TAG, "minus.onClick(), counter="+counter);
+
+              counter-=1;
+              screen.setText(counter+"");
+
 
           }
       });
@@ -76,4 +90,22 @@ public class InitialActivity extends Activity {
           }
       });
   }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        TextView screen = (TextView) findViewById(R.id.tvCounter);
+        String myText= screen.getText().toString();
+
+        savedInstanceState.putString("MyString",myText);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        savedInstanceState.getString("MyString");
+    }
 }
