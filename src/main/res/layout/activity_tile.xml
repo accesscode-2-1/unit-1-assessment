@@ -5,11 +5,84 @@
     android:layout_height="match_parent"
     tools:context="nyc.c4q.TileActivity"
     android:id="@+id/activity_tile"
+    android:orientation="horizontal"
     >
-
-    <TextView
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:text="TileActivity"/>
+        android:id="@+id/leftSide"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+
+        <View
+            android:layout_weight="40"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:id="@+id/redView"
+
+            android:background="#ffff0000"
+            >
+
+            <!--android:background="@drawable/red_color"-->
+
+         </View>
+
+        <View
+            android:layout_weight="60"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:id="@+id/greenView"
+            android:background="#ff00ff00">
+
+        </View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/rightSide"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+
+        <View
+            android:layout_weight="33"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:id="@+id/yellowView"
+            android:background="#ffffff00">
+
+        </View>
+
+        <View
+            android:layout_weight="44"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:id="@+id/whiteView"
+            android:background="#ffffffff">
+
+        </View>
+
+        <View
+            android:layout_weight="22"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:id="@+id/blueView"
+            android:background="#ff0000ff">
+
+        </View>
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:text="TileActivity"/>-->
+
+
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/buttonTileActivity"/>-->
 
 </LinearLayout>
