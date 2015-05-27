@@ -21,6 +21,16 @@ public class InitialActivity extends Activity {
   public SharedPreferences preferences = null;
   public final static String TAG = "C4QTAG";
 
+    @Override
+    protected void onSaveInstanceState(Bundle outstate){
+        textCount = Integer.parseInt( (String) tvCount.getText());
+        outstate.putInt("text_count", textCount);
+        saveState();
+    }
+
+
+
+
   public void loadState(){
     Log.d(TAG, "loadState()");
     counter = preferences.getInt("counter", 0);
@@ -35,17 +45,34 @@ public class InitialActivity extends Activity {
     editor.commit();
   }
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
+
+    @Override
+    protected void onPause() {
+        loadState();
+        textCount = counter;
+    }
+
+    @Override
+  protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
+
+
+
     preferences = getPreferences(Context.MODE_PRIVATE);
 
 
       buttonPlus = (Button) findViewById(R.id.buttonPlus);
       buttonMinus = (Button) findViewById(R.id.buttonMinus);
       tvCount = (TextView) findViewById(R.id.tvCounter);
-      textCount = Integer.parseInt(   (String) tvCount.getText()   );
+
+      if ( (savedInstanceState != null)) {
+
+         textCount = preferences.getInt("counter", counter);
+    }
+      else {
+          textCount = Integer.parseInt( (String) tvCount.getText() );
+      }
 
       View redView = findViewById(R.id.redView);
       //redView.setBackground(-65536);
@@ -67,10 +94,11 @@ public class InitialActivity extends Activity {
       buttonPlus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-
-                  textCount++;
-                  String x = String.valueOf(textCount);
-                  tvCount.setText(x);
+                  textCount = textCount++;
+              tvCount.setText(String.valueOf(textCount));
+            // textCount = Integer.parseInt( (String) tvCount.getText());
+             // counter = textCount;
+                   saveState();
 
 
           }
@@ -80,10 +108,17 @@ public class InitialActivity extends Activity {
           @Override
           public void onClick(View view) {
 
-              textCount--;
-              String x = String.valueOf(textCount);
+                  textCount = textCount--;
+                  //String x = String.valueOf(textCount);
+                  //int y = Integer. parseInt(x);
+                  //int countText = textCount;
+                 // countText = countText--;
+              tvCount.setText(String.valueOf(textCount));
+             //textCount = Integer.parseInt( (String) tvCount.getText());
+              //counter = textCount;
+                  saveState();
 
-              tvCount.setText(x);
+
 
 
 

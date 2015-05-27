@@ -83,15 +83,15 @@ public class Unit1AssessmentTestsAndroid {
         assertEquals("Button      (@+id/buttonTileActivity) should have layout_height='0dp'", 0, buttonTileActivity.getLayoutParams().height);
         assertEquals("Button      (@+id/buttonTileActivity) should have layout_width='match_parent'", LayoutParams.MATCH_PARENT, buttonTileActivity.getLayoutParams().width);
         assertEquals("Button      (@+id/buttonTileActivity) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonTileActivity.getLayoutParams()).weight, 0.01);
-<<<<<<< HEAD
-        assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 2, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);
-=======
+
+        assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);
+
         assertEquals("Button      (@+id/buttonEmpty) should have layout_height='0dp'", 0, buttonEmpty.getLayoutParams().height);
         assertEquals("Button      (@+id/buttonEmpty) should have layout_width='match_parent'", LayoutParams.MATCH_PARENT, buttonEmpty.getLayoutParams().width);
         assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);
         assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_height='match_parent'", LayoutParams.MATCH_PARENT, counterButtonsLayout.getLayoutParams().height);
         assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_width='0dp'", 0, counterButtonsLayout.getLayoutParams().width);
->>>>>>> bf0b81ecff92d9dfaaeb9913b88b5afb7270abe2
+
         assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) counterButtonsLayout.getLayoutParams()).weight, 0.01);
         assertEquals("TextView    (@+id/tvCounter) should have layout_height='match_parent'", LayoutParams.MATCH_PARENT, tvCounter.getLayoutParams().height);
         assertEquals("TextView    (@+id/tvCounter) should have layout_width='0dp'", 0, tvCounter.getLayoutParams().width);
