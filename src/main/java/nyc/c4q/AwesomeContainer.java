@@ -12,10 +12,12 @@ public class AwesomeContainer {
     public static Collection createAwesomeContainer(){
 
 
-        return null;
+        ArrayList<Object> myList = new ArrayList<Object>();
+
+        return myList;
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
-        awesomeContainer.add(awesomeContainer);
+        awesomeContainer.add(new ConcreteAwesomeClass());
     }
 }
