@@ -36,36 +36,27 @@ public class InitialActivity extends Activity {
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
 
-      loadState();
+    final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
 
-      final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
 
-      Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
-      buttonPlus.setOnClickListener(new View.OnClickListener() {
+    Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+    buttonPlus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-//              int counterInt = Integer.parseInt(tvCounter.getText().toString());
-//              counterInt += 1;
-//              tvCounter.setText(Integer.toString(counterInt));
 
               counter += 1;
               tvCounter.setText(Integer.toString(counter));
-              saveState();
           }
       });
 
-      Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
-      buttonMinus.setOnClickListener(new View.OnClickListener() {
+    Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
+    buttonMinus.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-//              int counterInt = Integer.parseInt(tvCounter.getText().toString());
-//              counterInt -= 1;
-//              tvCounter.setText(Integer.toString(counterInt));
 
               counter -= 1;
               tvCounter.setText(Integer.toString(counter));
-              saveState();
-          }
+        }
       });
 
       Button buttonTileActivity = (Button) findViewById(R.id.buttonTileActivity);
@@ -77,5 +68,8 @@ public class InitialActivity extends Activity {
           }
       });
 
+
   }
+
+
 }
