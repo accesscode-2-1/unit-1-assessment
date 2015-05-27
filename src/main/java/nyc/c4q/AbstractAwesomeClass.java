@@ -8,6 +8,9 @@ public abstract class AbstractAwesomeClass implements AwesomeInterface {
     @Override
     public int getData() {
 
+
+        setData(0);
+
         return 0;
     }
 

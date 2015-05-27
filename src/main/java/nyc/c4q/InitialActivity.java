@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,10 +41,10 @@ public class InitialActivity extends Activity {
         buttonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int numb = 0;
-                numb += 1;
-                TextView textView = (TextView) findViewById(R.id.buttonPlus);
-                textView.setText(numb + "");
+                counter += 1;
+                TextView textView = (TextView) findViewById(R.id.tvCounter);
+                textView.setText(counter + "");
+
             }
         });
 
@@ -51,15 +52,43 @@ public class InitialActivity extends Activity {
         buttonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                counter -= 1;
+                TextView textView = (TextView) findViewById(R.id.tvCounter);
+                textView.setText(counter + "");
 
-                int numb = 0;
-                numb -= 1;
-                TextView textView = (TextView) findViewById(R.id.buttonMinus);
-                textView.setText(numb + "");
+            }
+        });
+
+        Button tileActivity = (Button) findViewById(R.id.buttonTileActivity);
+        tileActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (getApplicationContext(), TileActivity.class);
+                startActivity(intent);
             }
         });
 
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString("saveState", preferences.toString());
+
+    }
+
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        preferences.toString();
     }
 
 }
