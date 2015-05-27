@@ -10,7 +10,8 @@ import java.util.List;
  */
 public class AwesomeContainer {
 
-    private static List myList;
+    private static ArrayList myList = new ArrayList();
+    private static Object o;
 
     public static Collection createAwesomeContainer(){
 
@@ -18,6 +19,6 @@ public class AwesomeContainer {
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
-
+        o = awesomeContainer;
     }
 }
