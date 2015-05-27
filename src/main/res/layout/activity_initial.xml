@@ -1,18 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    tools:context="nyc.c4q.InitialActivity"
+    android:id="@+id/activity_initial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nyc.c4q.InitialActivity"
-    android:id="@+id/activity_initial">
-
-    <TextView
-        android:id="@+id/text"
+    android:orientation="horizontal">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="InitialActivity"
-        />
+        android:orientation="horizontal"
+        android:id="@+id/counterLayout">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/counterButtonsLayout"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<TextView
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="InitialActivity"
+    android:orieation="horizontal"/>
+</LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/co">
+</LinearLayout>
 </LinearLayout>
