@@ -99,8 +99,7 @@ public class InitialActivity extends Activity {
 
     private void savePreferences(String key, String value) {
 
-        SharedPreferences sharedPreferences = PreferenceManager
-                .getDefaultSharedPreferences(this);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("counter", tvCounter.getText().toString());
         editor.commit();
