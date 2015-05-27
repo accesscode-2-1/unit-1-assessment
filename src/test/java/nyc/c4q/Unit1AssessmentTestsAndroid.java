@@ -35,7 +35,7 @@ public class Unit1AssessmentTestsAndroid {
     public void test01FixInitialActivityLayout() throws Exception {
         InitialActivity activity = Robolectric.buildActivity(InitialActivity.class).setup().get();
         LinearLayout layout = (LinearLayout) activity.findViewById(R.id.activity_initial);
-
+//How to create the button with its orientations
         assertTrue("LinearLayout(@+id/activity_initial)[0] should be a LinearLayout", layout.getChildAt(0) instanceof LinearLayout);
         LinearLayout counterLayout = (LinearLayout) layout.getChildAt(0);
         assertTrue("LinearLayout(@+id/activity_initial)[0] should have R.id.counterLayout", Helpers.getResourceId(counterLayout).equals("counterLayout"));
@@ -59,7 +59,7 @@ public class Unit1AssessmentTestsAndroid {
         assertTrue("LinearLayout(@+id/counterButtonsLayout)[1] should have R.id.buttonMinus", Helpers.getResourceId(buttonMinus).equals("buttonMinus"));
         assertTrue("LinearLayout(@+id/counterButtonsLayout)[1] should be equal to Button(@+id/buttonMinus)", buttonMinus == Helpers.findViewByIdString(activity, "buttonMinus"));
         assertEquals("-", buttonMinus.getText());
-
+//the text views of each one
         View tvCounter = counterLayout.getChildAt(1);
         assertTrue("LinearLayout(@+id/activity_initial)[0][1] should be equal to TextView(@+id/tvCounter)",
                 tvCounter instanceof TextView && Helpers.getResourceId(tvCounter).equals("tvCounter"));
@@ -74,7 +74,7 @@ public class Unit1AssessmentTestsAndroid {
         assertTrue("LinearLayout(@+id/activity_initial)[2] should be equal to Button(@+id/buttonEmpty)",
                 buttonEmpty instanceof Button && Helpers.getResourceId(buttonEmpty).equals("buttonEmpty"));
         assertEquals("Empty", ((Button) buttonEmpty).getText());
-
+//the weights of the layouts
         assertEquals("LinearLayout(@+id/counterLayout) should have layout_weight='2'", 2, ((LinearLayout.LayoutParams) counterLayout.getLayoutParams()).weight, 0.01);
         assertEquals("Button      (@+id/buttonTileActivity) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonTileActivity.getLayoutParams()).weight, 0.01);
         assertEquals("Button      (@+id/buttonEmpty) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).weight, 0.01);
@@ -83,7 +83,7 @@ public class Unit1AssessmentTestsAndroid {
         assertEquals("Button      (@+id/buttonPlus) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonPlus.getLayoutParams()).weight, 0.01);
         assertEquals("Button      (@+id/buttonMinus) should have layout_weight='1'", 1, ((LinearLayout.LayoutParams) buttonMinus.getLayoutParams()).weight, 0.01);
 
-
+//the height and weight of the layout
         assertEquals("LinearLayout(@+id/counterLayout) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) counterLayout.getLayoutParams()).height);
         assertEquals("Button      (@+id/buttonTileActivity) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) buttonTileActivity.getLayoutParams()).height);
         assertEquals("Button      (@+i/buttonEmpty) should have layout_height='0dp'", 0, ((LinearLayout.LayoutParams) buttonEmpty.getLayoutParams()).height);
