@@ -16,18 +16,11 @@ public class InitialActivity extends Activity {
     private TextView tvCount;
     private Button buttonPlus;
     private Button buttonMinus;
+    private Button tileActivity;
 
   public int counter = 0;
   public SharedPreferences preferences = null;
   public final static String TAG = "C4QTAG";
-
-    @Override
-    protected void onSaveInstanceState(Bundle outstate){
-        textCount = Integer.parseInt( (String) tvCount.getText());
-        outstate.putInt("text_count", textCount);
-        saveState();
-    }
-
 
 
 
@@ -48,85 +41,63 @@ public class InitialActivity extends Activity {
 
     @Override
     protected void onPause() {
-        loadState();
-        textCount = counter;
+        saveState();
+        super.onPause();
     }
 
     @Override
   protected void onCreate(final Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_initial);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_initial);
 
 
+        preferences = getPreferences(Context.MODE_PRIVATE);
+        loadState();
 
-    preferences = getPreferences(Context.MODE_PRIVATE);
+
+        buttonPlus = (Button) findViewById(R.id.buttonPlus);
+        buttonMinus = (Button) findViewById(R.id.buttonMinus);
+        tvCount = (TextView) findViewById(R.id.tvCounter);
+        tvCount.setText("" + counter);
+
+//        if ((preferences != null)) {
+//            loadState();
+//            textCount = preferences.getInt("counter", counter);
+//        } else {
+//            textCount = -1;
+//
+//            //textCount = Integer.parseInt( (String) tvCount.getText());
+//        }
+
+        View redView = findViewById(R.id.redView);
+        //redView.setBackground(-65536);
 
 
-      buttonPlus = (Button) findViewById(R.id.buttonPlus);
-      buttonMinus = (Button) findViewById(R.id.buttonMinus);
-      tvCount = (TextView) findViewById(R.id.tvCounter);
-
-      if ( (savedInstanceState != null)) {
-
-         textCount = preferences.getInt("counter", counter);
+        Button tileActivityBtn = (Button) findViewById(R.id.buttonTileActivity);
+        tileActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InitialActivity.this, TileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-      else {
-          textCount = Integer.parseInt( (String) tvCount.getText() );
+
+
+     public void onPlusClick(View view) {
+            counter += 1;
+            tvCount.setText("" + counter);
+     }
+
+      public void onMinusClick(View view) {
+          counter -= 1;
+           tvCount.setText("" + counter);
       }
 
-      View redView = findViewById(R.id.redView);
-      //redView.setBackground(-65536);
 
 
-
-
-      Button tileActivityBtn = (Button) findViewById(R.id.buttonTileActivity);
-      tileActivityBtn.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              Intent intent = new Intent(InitialActivity.this, TileActivity.class);
-              startActivity(intent);
-          }
-      });
-              //
-
-
-      buttonPlus.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-                  textCount = textCount++;
-              tvCount.setText(String.valueOf(textCount));
-            // textCount = Integer.parseInt( (String) tvCount.getText());
-             // counter = textCount;
-                   saveState();
-
-
-          }
-      });
-
-      buttonMinus.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-
-                  textCount = textCount--;
-                  //String x = String.valueOf(textCount);
-                  //int y = Integer. parseInt(x);
-                  //int countText = textCount;
-                 // countText = countText--;
-              tvCount.setText(String.valueOf(textCount));
-             //textCount = Integer.parseInt( (String) tvCount.getText());
-              //counter = textCount;
-                  saveState();
-
-
-
-
-
-          }
-      });
   }
 
 
 
-}
 

@@ -104,12 +104,6 @@
         android:layout_height="0dp">
 
 
-        <!--assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_height='match_parent'", LayoutParams.MATCH_PARENT, counterButtonsLayout.getLayoutParams().height);-->
-        <!--assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_width='0dp'", 0, counterButtonsLayout.getLayoutParams().width);-->
-
-        <!--assertEquals("LinearLayout(@+id/counterButtonsLayout) should have layout_weight='1'", 1, ((LinearL-->
-
-
 
         <LinearLayout
             android:orientation="vertical"
@@ -124,12 +118,14 @@
                 android:id="@+id/buttonPlus"
                 android:layout_weight="1"
                 android:text="+"
+                android:onClick="onPlusClick"
                 android:textSize="42dp" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:id="@+id/buttonMinus"
+                android:onClick="onMinusClick"
                 android:layout_weight="1"
                 android:text="-"
                 android:textSize="42dp" />
