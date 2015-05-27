@@ -14,8 +14,8 @@ public class Helpers {
         String idString = "no id";
         if (id != View.NO_ID) {
             Resources res = v.getResources();
-            if (res != null)
-                idString = res.getResourceEntryName(id);
+           if (res != null)
+             idString = res.getResourceEntryName(id);
         }
         return idString;
     }
@@ -27,4 +27,6 @@ public class Helpers {
     public static Class getClassByString(String s) throws ClassNotFoundException {
         return ClassLoader.getSystemClassLoader().loadClass(s);
     }
+
+
 }
