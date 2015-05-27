@@ -11,6 +11,11 @@ import android.widget.TextView;
 
 public class InitialActivity extends Activity {
 
+    Button buttonPlus;
+    Button buttonMinus;
+    TextView tvCounter;
+
+
   public int counter = 0;
   public SharedPreferences preferences = null;
   public final static String TAG = "C4QTAG";
@@ -34,7 +39,29 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+    tvCounter = (TextView) findViewById(R.id.tvCounter);
+
+    buttonPlus = (Button)findViewById(R.id.buttonPlus);
+    buttonPlus.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            counter++;
+            String number = String.valueOf(counter);
+            tvCounter.setText(number);
+        }
+      });
+    buttonMinus = (Button)findViewById(R.id.buttonMinus);
+    buttonMinus.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            counter--;
+            String number = String.valueOf(counter);
+            tvCounter.setText(number);
+        }
+      });
   }
 
-
 }
+
+
