@@ -2,6 +2,7 @@ package nyc.c4q;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,5 +35,50 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+      loadState();
+
+
+    final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
+
+      tvCounter.setText(Integer.toString(counter));
+
+
+    Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+    buttonPlus.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+
+              counter += 1;
+              tvCounter.setText(Integer.toString(counter));
+          }
+      });
+
+    Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
+    buttonMinus.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+
+              counter -= 1;
+              tvCounter.setText(Integer.toString(counter));
+        }
+      });
+
+      Button buttonTileActivity = (Button) findViewById(R.id.buttonTileActivity);
+      buttonTileActivity.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent activityTile = new Intent(InitialActivity.this, TileActivity.class);
+              startActivity(activityTile);
+          }
+      });
+
+
   }
+
+    @Override
+    protected void onDestroy() {
+        saveState();
+        super.onDestroy();
+    }
 }

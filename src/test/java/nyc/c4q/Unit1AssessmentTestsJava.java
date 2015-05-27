@@ -26,13 +26,13 @@ public class Unit1AssessmentTestsJava {
     }
 
     @Test
-    public void test02SubFunClassImplementsAwesomeInterface() throws Exception{
+    public void test02SubFunClassImplementsAwesomeInterface() throws Exception {
         SubFunClass funObject = new SubFunClass();
         assertThat(funObject, instanceOf(AwesomeInterface.class));
     }
 
-   @Test
-    public void test03AbstractAwesomeClassImplementsAwesomeInterface() throws Exception{
+    @Test
+    public void test03AbstractAwesomeClassImplementsAwesomeInterface() throws Exception {
         AbstractAwesomeClass awesomeObject = new ConcreteAwesomeClass();
         assertEquals(awesomeObject.getData(), 4);
         awesomeObject.setData(5);
@@ -40,7 +40,7 @@ public class Unit1AssessmentTestsJava {
     }
 
     @Test
-    public void test04AwesomeContainerContainsAwesomeObject() throws Exception{
+    public void test04AwesomeContainerContainsAwesomeObject() throws Exception {
         Collection myList = AwesomeContainer.createAwesomeContainer();
         assertEquals(myList.getClass(), ArrayList.class);
         AwesomeContainer.addAwesomeObject(myList);
