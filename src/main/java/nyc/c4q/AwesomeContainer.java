@@ -3,22 +3,25 @@ package nyc.c4q;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by amyquispe on 5/19/15.
  */
 public class AwesomeContainer {
 
-    private static Collection col;
+   private static ArrayList myList;
 
     public static Collection createAwesomeContainer() {
 
-        col = new ArrayList();
+        myList = new ArrayList();
 
-        return null;
+        return myList;
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
-        awesomeContainer.add(col.getClass());
+        ConcreteAwesomeClass cc = new ConcreteAwesomeClass();
+        myList.add(cc);
     }
 }
