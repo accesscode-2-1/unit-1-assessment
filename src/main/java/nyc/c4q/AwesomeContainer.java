@@ -11,14 +11,17 @@ import java.util.Objects;
 public class AwesomeContainer {
 
     public static Collection createAwesomeContainer(){
-
-        return null;
+        ArrayList myList = new ArrayList();
+        addAwesomeObject(myList);
+        return myList;
     }
 
     public static void addAwesomeObject(Collection awesomeContainer){
 
-       Object awesomeObject = new Object();
+        ConcreteAwesomeClass awesomeStuff = new ConcreteAwesomeClass();
 
+
+        awesomeContainer.add(awesomeStuff);
 
         return;
     }

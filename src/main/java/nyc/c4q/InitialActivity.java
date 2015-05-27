@@ -19,7 +19,7 @@ public class InitialActivity extends Activity {
   public void loadState(){
     Log.d(TAG, "loadState()");
     counter = preferences.getInt("counter", 0);
-    Log.d(TAG, "loadState(): counter=="+counter);
+    Log.d(TAG, "loadState(): counter==" + counter);
   }
 
   public void saveState(){
@@ -36,19 +36,21 @@ public class InitialActivity extends Activity {
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
 
-      saveState();
-      loadState();
-
-      Button tileActivityButton = (Button)findViewById(R.id.buttonTileActivity);
-      tileActivityButton.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-              Intent intent = new Intent(InitialActivity.this, TileActivity.class);
-              startActivity(intent);
-          }
-      });
+      if (savedInstanceState != null) {
+          counter = savedInstanceState.getInt("counter", counter);
+      } else {
+          Button tileActivityButton = (Button) findViewById(R.id.buttonTileActivity);
+          tileActivityButton.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent intent = new Intent(InitialActivity.this, TileActivity.class);
+                  startActivity(intent);
+              }
+          });
+      }
 
   }
+
     public void buttonPlus(View v){
         TextView tvcounter = (TextView) findViewById(R.id.tvCounter);
         counter = Integer.parseInt(tvcounter.getText().toString());
@@ -64,4 +66,11 @@ public class InitialActivity extends Activity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        loadState();
+        saveState();
+        outState.putInt("counter", counter);
+    }
 }
