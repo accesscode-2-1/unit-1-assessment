@@ -9,10 +9,68 @@
     tools:context="nyc.c4q.InitialActivity"
     android:id="@+id/activity_initial">
 
-    <TextView
-        android:id="@+id/text"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/counterLayout"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/counterButtonsLayout"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="+"
+                android:id="@+id/buttonPlus"
+                android:layout_weight="1"
+                android:textSize="40sp"
+                android:onClick="onClick" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="-"
+                android:id="@+id/buttonMinus"
+                android:layout_weight="1"
+                android:textSize="40sp"
+                android:onClick="onClick" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:id="@+id/tvCounter"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="InitialActivity"
-        />
+        android:layout_height="0dp"
+        android:text="TileActivity"
+        android:id="@+id/buttonTileActivity"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textStyle="normal"
+        android:typeface="normal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Empty"
+        android:id="@+id/buttonEmpty"
+        android:layout_weight="1"
+        android:textSize="35sp"
+        android:onClick="onClick" />
+
 </LinearLayout>
