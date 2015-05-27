@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InitialActivity extends Activity {
-    int numtest = 0;
-
   public int counter = 0;
   public SharedPreferences preferences = null;
   public final static String TAG = "C4QTAG";
@@ -31,23 +29,43 @@ public class InitialActivity extends Activity {
     editor.commit();
   }
 
-  @Override
+//    @Override
+//    protected void onStop() {
+//       // super.onStop();
+//        saveState();
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//       // super.onDestroy();
+//        saveState();
+//    }
+
+    @Override
+    protected void onPause() {
+        saveState();
+        super.onPause();
+
+    }
+
+    @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+    loadState();
+
+
   }
     public void addone(View v){
-
-        numtest+=1;
-        TextView t = (TextView) findViewById(R.id.counter);
-        t.setText(numtest+"");
+        counter+=1;
+        TextView t = (TextView) findViewById(R.id.tvCounter);
+        t.setText(counter+"");
     }
     public void subone(View v){
-
-        numtest-=1;
-        TextView t = (TextView) findViewById(R.id.counter);
-        t.setText(numtest+"");
+        counter-=1;
+        TextView t = (TextView) findViewById(R.id.tvCounter);
+        t.setText(counter+"");
     }
     public void toTile(View v) {
         Intent intent = new Intent(InitialActivity.this, TileActivity.class);
