@@ -52,9 +52,9 @@ public class InitialActivity extends Activity implements View.OnClickListener {
       Button buttonEmpty = (Button) findViewById(R.id.buttonEmpty);
       loadState();
 
-      if (savedInstanceState != null) {
-          int mCurrentCounter = savedInstanceState.getInt(String.valueOf(counter));
-      }
+      // if (savedInstanceState != null) {
+      //     int mCurrentCounter = savedInstanceState.getInt(String.valueOf(counter));
+      // }
       }
 
     @Override
@@ -76,12 +76,13 @@ public class InitialActivity extends Activity implements View.OnClickListener {
             counter += 1;
             Log.d(TAG, "onClick().buttonPlus, counter="+counter);
             tvCounter.setText(String.valueOf(counter));
+            saveState();
         }
         if (v.getId()==R.id.buttonMinus) {
             counter -= 1;
             Log.d(TAG, "onClick().buttonMinus, counter="+counter);
             tvCounter.setText(String.valueOf(counter));
-
+            saveState();
         }
     }
     @Override
