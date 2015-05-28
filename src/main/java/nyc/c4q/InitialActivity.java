@@ -34,25 +34,31 @@ public class InitialActivity extends Activity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial);
         preferences = getPreferences(Context.MODE_PRIVATE);
+
+        loadState();
 
         final Button button = (Button) findViewById(R.id.buttonPlus);
         final TextView countertv = (TextView) findViewById(R.id.tvCounter);
 
         if(savedInstanceState!=null){
             counter= Integer.parseInt(savedInstanceState.get("click_count").toString());
+            saveState();
             countertv.setText(counter);
+
         }
 
-        button.setOnClickListener(new View.OnClickListener() {
+                button.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View view) {
                 counter++;
+                saveState();
                 countertv.setText(String.valueOf(counter));
+
             }
 
         });
@@ -62,7 +68,9 @@ public class InitialActivity extends Activity {
             @Override
             public void onClick(View view) {
                 counter--;
+                saveState();
                 countertv.setText(String.valueOf(counter));
+
             }
         });
 
@@ -72,15 +80,11 @@ public class InitialActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(InitialActivity.this, TileActivity.class);
                 startActivity(intent);
+
             }
         });
-    }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState){
-        super.onSaveInstanceState(outState);
-        outState.putInt("click_count", counter);
 
-        //base.OnSaveInstanceState (outState);
     }
+//    saveState();
 }
