@@ -51,7 +51,7 @@ public class InitialActivity extends Activity {
 
         }
 
-                button.setOnClickListener(new View.OnClickListener() {
+            button.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View view) {
@@ -84,7 +84,17 @@ public class InitialActivity extends Activity {
             }
         });
 
+        saveState();
 
     }
-//    saveState();
+
+    protected void onPause(){
+        super.onPause();
+        saveState();
+    }
+
+    protected void onResume(){
+        super.onResume();
+        loadState();
+    }
 }
