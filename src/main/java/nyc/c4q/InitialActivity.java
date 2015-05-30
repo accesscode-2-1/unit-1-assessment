@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.ArrayList;
 
 public class InitialActivity extends Activity {
 
@@ -34,5 +35,32 @@ public class InitialActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_initial);
     preferences = getPreferences(Context.MODE_PRIVATE);
+
+      final TextView tvCounter = (TextView) findViewById(R.id.tvCounter);
+
+      Button plusButton = (Button) findViewById(R.id.buttonPlus);
+      Button minusButton = (Button) findViewById(R.id.buttonMinus);
+
+      ArrayList<Button> buttons = new ArrayList<Button>();
+      buttons.add(plusButton);
+      buttons.add(minusButton);
+
+      for (Button button : buttons) {
+          button.setOnClickListener(new View.OnClickListener(){
+              @Override
+              public void onClick(View view) {
+                  switch (view.getId()) {
+                      case R.id.buttonPlus:
+                          counter += 1;
+                          tvCounter.setText(counter+"");
+                          break;
+                      case R.id.buttonMinus:
+                          counter -= 1;
+                          tvCounter.setText(counter+"");
+                          break;
+                  }
+              }
+          });
+      }
   }
 }
