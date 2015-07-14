@@ -5,8 +5,56 @@
     android:layout_height="match_parent"
     tools:context="nyc.c4q.TileActivity"
     android:id="@+id/activity_tile"
+    android:orientation="horizontal"
     >
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/leftSide"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <View
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:background="@color/red"
+            android:id="@+id/redView"
+            android:layout_weight="40"></View>
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:id="@+id/greenView"
+               android:background="@color/green"
+               android:layout_weight="60"></View>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/rightSide"
+        android:layout_weight="1"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/yellowView"
+            android:background="@color/yellow"
+            android:layout_weight="33"></View>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/whiteView"
+            android:background="@color/white"
+            android:layout_weight="44"></View>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/blueView"
+            android:background="@color/blue"
+            android:layout_weight="22"></View>
+        </LinearLayout>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
     <TextView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
